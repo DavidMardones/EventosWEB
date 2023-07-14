@@ -25,5 +25,11 @@ namespace EventosWEB
                 this.cargaGrilla(this.asistentesDAL.ObtenerAsistentes());
             }
         }
+
+        protected void estadoDDL_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string estado = this.estadoDDL.SelectedValue;
+            List<Asistente> asistentes = this.asistentesDAL.ObtenerAsistentes(estado);
+        }
     }
 }
